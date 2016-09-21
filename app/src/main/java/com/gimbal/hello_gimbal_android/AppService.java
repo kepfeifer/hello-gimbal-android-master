@@ -38,6 +38,7 @@ public class AppService extends Service {
             @Override
             public void onVisitStart(Visit visit) {
                 addEvent(String.format("Start Visit for %s", visit.getPlace().getName()));
+                addEvent(String.format("This is working!", visit.getPlace().getName()));
             }
 
             @Override

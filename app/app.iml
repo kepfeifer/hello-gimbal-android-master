@@ -110,10 +110,10 @@
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.0.0" level="project" />
-    <orderEntry type="library" exported="" name="gimbal-slf4j-impl-2.48.1" level="project" />
+    <orderEntry type="library" exported="" name="gimbal-slf4j-impl-2.49.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="slf4j-api-1.7.6" level="project" />
-    <orderEntry type="library" exported="" name="gimbal-sdk-2.48.1" level="project" />
+    <orderEntry type="library" exported="" name="gimbal-sdk-2.49.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="android-android-22" level="project" />
   </component>

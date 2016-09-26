@@ -7,18 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.gimbal.hello_gimbal_android.MainActivity"
+    tools:context="com.gimbal.hello_gimbal_android.WelcomeActivity"
     android:background="#9e1b32"
-
-    >
+>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/welcomemessage"
-        />
-
-
-
-
+        android:id="@+id/imageView"
+        android:src="@drawable/hi_there"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

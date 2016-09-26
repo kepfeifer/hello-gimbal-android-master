@@ -23,8 +23,9 @@ public class MainActivity extends ActionBarActivity {
 
         adapter = new GimbalEventListAdapter(this);
 
-        ListView listView = (ListView) findViewById(R.id.listview);
-        listView.setAdapter(adapter);
+        //ListView listView = (ListView) findViewById(R.id.listview);
+        //listView.setAdapter(adapter);
+
     }
     @Override
     protected void onNewIntent(Intent intent) {

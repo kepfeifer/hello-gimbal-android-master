@@ -25,6 +25,7 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'com.android.support:appcompat-v7:22.1.0'
     compile 'com.gimbal.android.v2:gimbal-sdk:+'
     compile 'com.gimbal.android.v2:gimbal-slf4j-impl:+'
 }

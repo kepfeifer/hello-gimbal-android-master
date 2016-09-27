@@ -18,14 +18,14 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         startService(new Intent(this, AppService.class));
 
 
         adapter = new GimbalEventListAdapter(this);
 
-        //ListView listView = (ListView) findViewById(R.id.listview);
-        //listView.setAdapter(adapter);
-
+        ListView listView = (ListView)findViewById(R.id.listview);
+        listView.setAdapter(adapter);
     }
     @Override
     protected void onNewIntent(Intent intent) {

@@ -1,11 +1,5 @@
 package com.gimbal.hello_gimbal_android;
 
-/**
- * Created by kpfeifer15 on 9/26/2016.
- */
-
-
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

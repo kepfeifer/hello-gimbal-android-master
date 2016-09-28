@@ -5,13 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+import android.bluetooth.BluetoothAdapter;
 
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends AppCompatActivity {
     private GimbalEventReceiver gimbalEventReceiver;
     private GimbalEventListAdapter adapter;
+    private final static int REQUEST_ENABLE_BT = 1;
+    BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,13 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+
+        if (!mBluetoothAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        }
+
         gimbalEventReceiver = new GimbalEventReceiver();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(GimbalDAO.GIMBAL_NEW_EVENT_ACTION);

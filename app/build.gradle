@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.gimbal.hello_gimbal_android"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"

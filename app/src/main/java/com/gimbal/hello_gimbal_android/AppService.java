@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.widget.ImageView;
 
 import com.gimbal.android.Communication;
 import com.gimbal.android.CommunicationListener;
@@ -37,8 +38,10 @@ public class AppService extends Service {
 
             @Override
             public void onVisitStart(Visit visit) {
+                //display the notification, picture thing
+
                 addEvent(String.format("Start Visit for %s", visit.getPlace().getName()));
-                addEvent(String.format("This is working!", visit.getPlace().getName()));
+
             }
 
             @Override
@@ -70,6 +73,8 @@ public class AppService extends Service {
                 for (Communication communication : communications) {
                     if(communication != null) {
                         addEvent(String.format( "Communication Clicked"));
+
+
                     }
                 }
             }

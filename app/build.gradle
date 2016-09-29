@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion "21.1.2"
 
     defaultConfig {
@@ -24,8 +24,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.android.support:appcompat-v7:22.1.0'
     compile 'com.gimbal.android.v2:gimbal-sdk:+'
     compile 'com.gimbal.android.v2:gimbal-slf4j-impl:+'
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.android.support:design:22.2.1'
 }

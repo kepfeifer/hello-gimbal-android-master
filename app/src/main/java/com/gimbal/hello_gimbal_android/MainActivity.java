@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+
+
         }
 
         gimbalEventReceiver = new GimbalEventReceiver();
@@ -57,6 +59,19 @@ public class MainActivity extends AppCompatActivity {
         intentFilter.addAction(GimbalDAO.GIMBAL_NEW_EVENT_ACTION);
         intentFilter.addAction(AppService.APPSERVICE_STARTED_ACTION);
         registerReceiver(gimbalEventReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent Data)
+    {
+        if(requestCode == 1)
+        {
+            if(resultCode == RESULT_CANCELED)
+            {
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+            }
+        }
     }
 
     @Override

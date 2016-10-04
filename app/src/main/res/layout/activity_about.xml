@@ -10,13 +10,27 @@
     tools:context="com.gimbal.hello_gimbal_android.About">
 
     <TextView
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:singleLine="false"
         android:gravity="center"
-        android:text="Established in 2016, Safe Step, was developed to help ensure the safety of pedestrians on The University of Alabama’s campus.
-	 While serving over 35,000 students and countless numbers of prestigious guests, our goal is to help mitigate distractions caused by the use of mobile devices will using crosswalks.
-	  Safe Step utilizes Bluetooth beacons to send a notification to application users’ phones, alerting them to look up from their phone when they are about to reach a crosswalk.
-	  Please remember to turn on your Bluetooth and keep the application running in the background.
-	   Here at the Capstone we firmly believe that your next step should be a Safe Step."/>
+        android:textStyle="bold"
+        android:text="About Us"
+        />
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:text="Established in 2016, Safe Step, was developed to help ensure the safety of pedestrians on The University of Alabama’s campus. While serving over 35,000 students and countless numbers of prestigious guests, our goal is to help mitigate distractions caused by the use of mobile devices will using crosswalks. Safe Step utilizes Bluetooth beacons to send a notification to application users’ phones, alerting them to look up from their phone when they are about to reach a crosswalk. Please remember to turn on your Bluetooth and keep the application running in the background."/>
+
+    <TextView
+        android:layout_below="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:text=" Here at the Capstone we firmly believe that your next step should be a Safe Step."/>
+
 </RelativeLayout>

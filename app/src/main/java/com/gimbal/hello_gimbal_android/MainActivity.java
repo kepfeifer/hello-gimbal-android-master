@@ -57,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent i= new Intent(this, SettingsActivity.class);
                 startActivity(i);
                 return true;
+            case R.id.action_about:
+                Intent j = new Intent(this, About.class);
+                startActivity(j);
+                return true;
+            case R.id.action_legal:
+                Intent k = new Intent(this, Legal.class);
+                startActivity(k);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -89,12 +97,12 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
 
 
-        if (!mBluetoothAdapter.isEnabled()) {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+        //if (!mBluetoothAdapter.isEnabled()) {
+            //Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+           // startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
 
 
-        }
+        //}
 
         gimbalEventReceiver = new GimbalEventReceiver();
         IntentFilter intentFilter = new IntentFilter();

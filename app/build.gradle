@@ -29,4 +29,5 @@ dependencies {
     compile 'com.gimbal.android.v2:gimbal-slf4j-impl:+'
     compile 'com.android.support:support-v4:22.2.1'
     compile 'com.android.support:design:22.2.1'
+    compile 'com.google.firebase:firebase-messaging:9.6.0'
 }

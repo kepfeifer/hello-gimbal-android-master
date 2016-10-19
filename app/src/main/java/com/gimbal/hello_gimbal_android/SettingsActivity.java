@@ -20,6 +20,7 @@ import android.preference.RingtonePreference;
 import android.text.TextUtils;
 import android.view.MenuItem;
 
+
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
  * handset devices, settings are presented as a single list. On tablets,
@@ -152,8 +153,8 @@ public class SettingsActivity extends PreferenceActivity {
     /**
      * {@inheritDoc}
      */
-    @Override
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    //@Override
+   // @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     //public void onBuildHeaders(List<Header> target) {
     //    loadHeadersFromResource(R.xml.pref_headers, target);
     //}

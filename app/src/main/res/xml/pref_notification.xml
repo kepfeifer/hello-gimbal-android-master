@@ -1,7 +1,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- A 'parent' preference, which enables/disables child preferences (below)
          when checked/unchecked. -->
-    <SwitchPreference
+   <SwitchPreference
         android:defaultValue="true"
         android:key="notifications_new_message"
         android:title="@string/pref_title_new_message_notifications" />
@@ -22,5 +22,6 @@
         android:dependency="notifications_new_message"
         android:key="notifications_new_message_vibrate"
         android:title="@string/pref_title_vibrate" />
+
 
 </PreferenceScreen>

@@ -60,17 +60,6 @@ public class AppService extends Service {
             public Notification.Builder prepareCommunicationForDisplay(Communication communication, Visit visit, int notificationId) {
                 addEvent(String.format( "Communication Delivered :"+communication.getTitle()));
                 // If you want a custom notification create and return it here
-                //Caller shoould return a customized Notofication.Builder so that SDK uses this for notification
-
-                return null;
-            }
-
-
-
-            @Override
-            public Notification.Builder prepareCommunicationForDisplay(Communication communication, Push push, int notificationId) {
-                addEvent(String.format( "Push Communication Delivered :"+communication.getTitle()));
-                // If you want a custom notification create and return it here
                 Notification.Builder mBuilder =
                         new Notification.Builder(AppService.this)
                                 .setSmallIcon(R.drawable.safe_step_icon)
@@ -93,7 +82,15 @@ public class AppService extends Service {
 
 
                 return mBuilder;
+            }
 
+
+
+            @Override
+            public Notification.Builder prepareCommunicationForDisplay(Communication communication, Push push, int notificationId) {
+                addEvent(String.format( "Push Communication Delivered :"+communication.getTitle()));
+                // If you want a custom notification create and return it here
+                return null;
             }
 
             @Override

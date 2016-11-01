@@ -67,12 +67,13 @@ public class AppService extends Service {
                                 .setContentText("You are about to cross the street, LOOK UP!");
                 //Notification.InboxStyle inboxStyle= new Notification.InboxStyle();
                 /// mBuilder.setStyle(inboxStyle);
+                mBuilder.setPriority(Notification.PRIORITY_MAX);
                 mBuilder.setColor(Color.GRAY);
                 mBuilder.setLights(Color.CYAN, 4, 1);
                 mBuilder.setVibrate(new long[]{1000, 1000});
                 Uri alarmSound= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
                 mBuilder.setSound(alarmSound);
-                mBuilder.setPriority(Notification.PRIORITY_MAX);
+                mBuilder.setTicker("LOOK UP!");
 
 
                 int mNotificationId = 001;

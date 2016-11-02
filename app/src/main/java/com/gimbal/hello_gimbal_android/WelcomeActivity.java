@@ -11,7 +11,7 @@ import android.widget.ImageView;
 public class WelcomeActivity extends AppCompatActivity  {
     ImageView imageView;
 
-
+// Welcome animation ("Hi There")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

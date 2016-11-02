@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private GimbalEventReceiver gimbalEventReceiver;
     private GimbalEventListAdapter adapter;
 
+    // Enabling Bluetooth request
     private final static int REQUEST_ENABLE_BT = 1;
     BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -46,12 +47,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    // Options menu toolbar
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
+    // Option menu items: Settings, About, and Legal
+    // Selecting option launches that items activity
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.action_settings:
@@ -97,7 +101,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
+    /* On application start, checks if bluetooth is enabled on the device. If it is then the
+       application runs, if it is not then a bluetooth request prompts the user to turn on
+       bluetooth. */
         if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
@@ -115,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent Data)
     {
+    /* Checks if the user selected to cancel the Bluetooth request dialog. If so, then the
+        Bluetooth request is resent. The request will be resent until Bluetooth is turned on. */
         if(requestCode == 1)
         {
             if(resultCode == RESULT_CANCELED)

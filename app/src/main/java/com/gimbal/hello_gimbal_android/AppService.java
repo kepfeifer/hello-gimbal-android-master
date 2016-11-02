@@ -59,14 +59,15 @@ public class AppService extends Service {
             @Override
             public Notification.Builder prepareCommunicationForDisplay(Communication communication, Visit visit, int notificationId) {
                 addEvent(String.format( "Communication Delivered :"+communication.getTitle()));
+
+
+
                 // If you want a custom notification create and return it here
                 Notification.Builder mBuilder =
                         new Notification.Builder(AppService.this)
                                 .setSmallIcon(R.drawable.safe_step_icon)
                                 .setContentTitle("Look Up")
                                 .setContentText("You are about to cross the street, LOOK UP!");
-                //Notification.InboxStyle inboxStyle= new Notification.InboxStyle();
-                /// mBuilder.setStyle(inboxStyle);
                 mBuilder.setPriority(Notification.PRIORITY_MAX);
                 mBuilder.setColor(Color.GRAY);
                 mBuilder.setLights(Color.CYAN, 4, 1);
@@ -74,12 +75,14 @@ public class AppService extends Service {
                 Uri alarmSound= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
                 mBuilder.setSound(alarmSound);
                 mBuilder.setTicker("LOOK UP!");
+                //Notification.InboxStyle inboxStyle= new Notification.InboxStyle();
+                // mBuilder.setStyle(inboxStyle);
 
 
-                int mNotificationId = 001;
+                notificationId = 1;
                 NotificationManager mNotifyMgr =
                         (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                mNotifyMgr.notify(mNotificationId, mBuilder.build());
+                mNotifyMgr.notify(notificationId, mBuilder.build());
 
 
                 return mBuilder;

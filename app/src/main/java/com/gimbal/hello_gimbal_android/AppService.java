@@ -5,9 +5,14 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.IBinder;
+import android.support.annotation.Nullable;
 
 import com.gimbal.android.Communication;
 import com.gimbal.android.CommunicationListener;
@@ -31,8 +36,21 @@ public class AppService extends Service {
     public static final String APPSERVICE_STARTED_ACTION = "appservice_started";
     private static final int MAX_NUM_EVENTS = 100;
     private LinkedList<String> events;
+
+    SensorManager mSensor = (SensorManager)this.getSystemService(SENSOR_SERVICE);
+
+    Sensor steps = mSensor.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+
+
+
+
+
     @Override
     public void onCreate(){
+
+
+
+
         events = new LinkedList<>(GimbalDAO.getEvents(getApplicationContext()));
         Gimbal.setApiKey(this.getApplication(), "9e186f5b-7941-456b-af3f-d0cccc660888");
 
@@ -55,7 +73,13 @@ public class AppService extends Service {
         PlaceManager.getInstance().startMonitoring();
 
         // Setup CommunicationListener
+
+
+
         communicationListener = new CommunicationListener() {
+
+
+
             @Override
             public Notification.Builder prepareCommunicationForDisplay(Communication communication, Visit visit, int notificationId) {
                 addEvent(String.format( "Communication Delivered :"+communication.getTitle()));
